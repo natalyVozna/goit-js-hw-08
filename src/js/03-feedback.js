@@ -7,7 +7,7 @@ const dataLocalStorage = localStorage.getItem('feedback-form-state');
 
 let dataParse;
 
-if (dataLocalStorage) {
+if (dataLocalStorage && dataLocalStorage !== '') {
   try {
     dataParse = JSON.parse(dataLocalStorage);
     emailEl.value = dataParse.email || '';
