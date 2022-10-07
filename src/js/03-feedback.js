@@ -24,20 +24,17 @@ if (dataLocalStorage) {
 const dataObj = {};
 function handleChangeForm(e) {
   e.preventDefault();
-  console.log(e.target.name, e.target.value);
-  dataObj[e.target.name] = e.target.value;
-  //   let dataPars = '';
+  const { name, value } = e.target;
+  dataObj[name] = value;
 
   if (Object.keys(dataObj).length > 0) {
     let data;
     try {
       data = JSON.stringify(dataObj);
+      localStorage.setItem('feedback-form-state', data);
     } catch (error) {
       console.log(error, 'error');
     }
-
-    console.log('data.strin', data, dataObj);
-    localStorage.setItem('feedback-form-state', data);
   }
 }
 
