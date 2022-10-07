@@ -5,8 +5,6 @@ const emailEl = document.querySelector('input[name="email"]');
 const messageEl = document.querySelector('textarea[name="message"]');
 const dataLocalStorage = localStorage.getItem('feedback-form-state');
 
-console.log('reload');
-
 let dataParse;
 
 if (dataLocalStorage) {
@@ -17,8 +15,6 @@ if (dataLocalStorage) {
   } catch (error) {
     console.log('error', error);
   }
-
-  console.log('dataParse', dataParse);
 }
 
 const dataObj = {};
